@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UFT-8">
+    <title>注册页面</title>
+</head>
+<body>
+    <form action="#" method="post" name="register">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Register</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><label for="name">Name</label>:</td>
+                <td> <input type="text" name="name" id="name" value="Your name"> </td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input name="gender" type="radio" id="male" value="male" checked>
+                        <label for="male">Male</label>
+                        <input name="gender" type="radio" id="female">
+                        <label for="female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of birth:</td>
+                    <td>
+                        <select name="yr">
+                            <option>Year</option>
+                            <option selected value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                        <select name="mon">
+                            <option>Month</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="psd">Password</label>:</td>
+                    <td><input name="psd" type="password" id="psd" maxlength="8"> * Password must contain at least 8 characters!</td>
+                </tr>
+                <tr>
+                    <td>Favorite fruit:</td>
+                    <td>
+                        <input name="favorite" type="checkbox" value="apple" id="apple">
+                        <label for="apple">Apple</label>
+                        <input name="favorite" type="checkbox" value="banana" id="banana">
+                        <label for="banana">Banana</label>
+                        <input name="favorite" type="checkbox" value="kiwi" id="kiwi">
+                        <label for="kiwi">Kiwi</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="info">About me</label>:</td>
+                    <td><input name="info" type="textarea" value="Have a nice day!" id="info"></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Mobile photo</label>:</td>
+                    <td>
+                        <input name="phone" type="text" maxlength="11" value="11 phone number" id="phone">
+                        <input name="send" type="button" value="Send me code">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="code">Code</label>:</td>
+                    <td><input name="code" type="text" maxlength="4" id="code"> * Enter the 4-digit verification code</td>
+                </tr>
+                <tr>
+                    <td><label for="photo">Send your photo</label></td>
+                    <td><input name="photo" type="file" id="photo"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input name="agree" type="checkbox" value="yes" checked id="yes"><label for="yes">I accept agreement!</label>
+                        <p>About <a href="#" target="_blank">Agreement</a> and <a href="#" target="_blank">Privacy</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Submit">
+                        <input type="Reset" value="Reset">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h4>In case i don't see you</h4>
+                        <ul>
+                            <li>Good afternoon</li>
+                            <li>Good evening</li>
+                            <li>Good night</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="uft-8">
+    <title>表单标签用法</title>
+</head>
+<body>
+    <form action="#" method="POST" name="name1">
+    <!-- action为接受表单的服务器 method提交方式POST/GET name为命名表单 -->
+       <label for="name">Name</label>:<input name="name" type="text" value="Your name" id="name"> <br>
+       Date of birth:
+       <select>
+           <option>Year</option>
+           <option selected="selected">2021</option>
+           <option>2020</option>
+           <option>2019</option>
+       </select>
+       <select>
+           <option>Month</option>
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+           <option>6</option>
+           <option>7</option>
+           <option>8</option>
+           <option>9</option>
+           <option>10</option>
+           <option>11</option>
+           <option>12</option>
+       </select>
+       <br>
+       Gender:<input name="gender" type="radio" value="male" checked="checked" id="male"><label for="male">Male</label>&nbsp;<input name="gender" type="radio" value="female" id="female"><label for="female">Female</label> <br>
+       <label for="psd">Password</label>:<input name="psd" type="password" maxlength="8" id="psd">*&nbsp;Password must contain at least 8 characters<br>
+       Characteristic:<input name="char" type="checkbox" value="brave" id="brave"><label for="brave">Brave</label>&nbsp;<input name="char" type="checkbox" value="clever" id="clever"><label for="clever">Clever</label>&nbsp;<input name="char" type="checkbox" value="lovely" id="lovely"><label for="lovely">Lovely</label><br>
+       About me:<textarea>Have a nice day!</textarea><br>
+       <input name="code" value="Send me code" type="button"><br>
+       <input name="upload" value="Send file" type="file"><br>
+       <!-- 疑惑：无法改变file属性value值，更改按钮上的文字 -->
+       <input name="submit" value="Submit" type="submit">
+       <input name="reset" value="Reset" type="reset">
+    </form>
+</body>
+</html>
