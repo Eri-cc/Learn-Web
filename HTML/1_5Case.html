@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UFT-8">
     <title>注册页面</title>
 </head>
+
 <body>
     <form action="#" method="post" name="register">
         <table>
@@ -14,74 +16,67 @@
             </thead>
             <tbody>
                 <tr>
-                <td><label for="name">Name</label>:</td>
-                <td> <input type="text" name="name" id="name" value="Your name"> </td>
+                    <td><label for="name">Name</label>:</td>
+                    <td> <input type="text" name="name" id="name" placeholder="Your name"> </td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
                     <td>
-                        <input name="gender" type="radio" id="male" value="male" checked>
+                        <input type="radio" name="gender" id="male" value="male" checked>
                         <label for="male">Male</label>
-                        <input name="gender" type="radio" id="female">
+                        <input type="radio" name="gender" id="female">
                         <label for="female">Female</label>
                     </td>
                 </tr>
                 <tr>
                     <td>Date of birth:</td>
                     <td>
-                        <select name="yr">
-                            <option>Year</option>
-                            <option selected value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                        </select>
-                        <select name="mon">
-                            <option>Month</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
+                        <input type="date" min="1950-1-1">
                     </td>
                 </tr>
                 <tr>
                     <td><label for="psd">Password</label>:</td>
-                    <td><input name="psd" type="password" id="psd" maxlength="8"> * Password must contain at least 8 characters!</td>
+                    <td><input type="password" name="psd" id="psd" maxlength="8"> * Password must contain at least 8
+                        characters!</td>
                 </tr>
                 <tr>
                     <td>Favorite fruit:</td>
                     <td>
-                        <input name="favorite" type="checkbox" value="apple" id="apple">
+                        <input type="checkbox" name="favorite" value="apple" id="apple">
                         <label for="apple">Apple</label>
-                        <input name="favorite" type="checkbox" value="banana" id="banana">
+                        <input type="checkbox" name="favorite" value="banana" id="banana">
                         <label for="banana">Banana</label>
-                        <input name="favorite" type="checkbox" value="kiwi" id="kiwi">
+                        <input type="checkbox" name="favorite" value="kiwi" id="kiwi">
                         <label for="kiwi">Kiwi</label>
                     </td>
                 </tr>
                 <tr>
                     <td><label for="info">About me</label>:</td>
-                    <td><input name="info" type="textarea" value="Have a nice day!" id="info"></td>
+                    <td><textarea name="info" placeholder="Have a nice day!" id="info"></textarea></td>
                 </tr>
                 <tr>
                     <td><label for="phone">Mobile photo</label>:</td>
                     <td>
-                        <input name="phone" type="text" maxlength="11" value="11 phone number" id="phone">
-                        <input name="send" type="button" value="Send me code">
+                        <input type="text" name="phone" maxlength="15" value="+86 " id="phone">
+                        <input type="button" name="send" value="Send me code">
                     </td>
                 </tr>
                 <tr>
                     <td><label for="code">Code</label>:</td>
-                    <td><input name="code" type="text" maxlength="4" id="code"> * Enter the 4-digit verification code</td>
+                    <td><input type="text" name="code" maxlength="4" id="code"> * Enter the 4-digit verification code
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="photo">Send your photo</label></td>
-                    <td><input name="photo" type="file" id="photo"></td>
+                    <td><input type="file" name="photo" id="photo"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        <input name="agree" type="checkbox" value="yes" checked id="yes"><label for="yes">I accept agreement!</label>
-                        <p>About <a href="#" target="_blank">Agreement</a> and <a href="#" target="_blank">Privacy</a></p>
+                        <input type="checkbox" name="agree" value="yes" checked id="yes"><label for="yes">I accept
+                            agreement!</label>
+                        <p>About <a href="#" target="_blank">Agreement</a> and <a href="#" target="_blank">Privacy</a>
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -106,4 +101,5 @@
         </table>
     </form>
 </body>
+
 </html>
