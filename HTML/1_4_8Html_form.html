@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="uft-8">
+    <title>表单标签用法</title>
+</head>
+
+<body>
+    <form action="#" method="POST" name="name1">
+        <!-- action为接受表单的服务器 method提交方式POST/GET name为命名表单 -->
+        <label for="name">Name</label>:
+        <input type="text" name="name" value="Your name" id="name">
+        <br />
+        Date of birth:
+        <select>
+            <option sleceted>Year</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+        </select>
+        <select>
+            <option>Month</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+        <br />
+        <!-- type输入类型date -->
+        Date of birth:
+        <input type="date" name="bday" min="1920-1-1">
+        <br />
+        Gender:
+        <input type="radio" name="gender" value="male" id="male" checked>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label for="female">Female</label>
+        <br />
+        <label for="psd">Password</label>:
+        <input type="password" name="psd" maxlength="8" id="psd">
+        * Password must contain at least 8 characters
+        <br />
+        Characteristic:
+        <input type="checkbox" name="char" value="brave" id="brave">
+        <label for="brave">Brave</label>
+        <input type="checkbox" name="char" value="clever" id="clever">
+        <label for="clever">Clever</label>
+        <input type="checkbox" name="char" value="lovely" id="lovely">
+        <label for="lovely">Lovely</label>
+        <br />
+        About me:
+        <textarea placeholder="Have a nice day!"></textarea>
+        <br />
+        <input type="button" name="code" value="Send me code">
+        <br />
+        <input type="file" name="upload" value="Send file">
+        <!-- 疑惑：无法改变file属性value值，更改按钮上的文字 -->
+        <br />
+        <input type="submit" name="submit" value="Submit">
+        <input type="reset" name="reset" value="Reset">
+    </form>
+</body>
+
+</html>
+<!-- w3c上有更多、更新的表单用法 链接：https://www.w3school.com.cn/html/html_forms.asp -->
