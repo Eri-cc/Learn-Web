@@ -2,8 +2,18 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UFT-8">
+    <meta charset="UTF-8">
     <title>注册页面</title>
+    <style>
+        input,
+        textarea {
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,9 +26,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><label for="name">Name</label>:</td>
-                    <td> <input type="text" name="name" id="name" placeholder="Your name"> </td>
+                    <td>
+                        <label for="name">Name</label>:
+                    </td>
+                    <td>
+                        <input type="text" name="name" id="name" placeholder="Your name" autocomplete="off">
+                    </td>
                 </tr>
+
                 <tr>
                     <td>Gender:</td>
                     <td>
@@ -28,17 +43,24 @@
                         <label for="female">Female</label>
                     </td>
                 </tr>
+
                 <tr>
                     <td>Date of birth:</td>
                     <td>
                         <input type="date" min="1950-1-1">
                     </td>
                 </tr>
+
                 <tr>
-                    <td><label for="psd">Password</label>:</td>
-                    <td><input type="password" name="psd" id="psd" maxlength="8"> * Password must contain at least 8
-                        characters!</td>
+                    <td>
+                        <label for="psd">Password</label>:
+                    </td>
+                    <td>
+                        <input type="password" name="psd" id="psd" maxlength="8">
+                        * Password must contain at least 8characters!
+                    </td>
                 </tr>
+
                 <tr>
                     <td>Favorite fruit:</td>
                     <td>
@@ -50,10 +72,16 @@
                         <label for="kiwi">Kiwi</label>
                     </td>
                 </tr>
+
                 <tr>
-                    <td><label for="info">About me</label>:</td>
-                    <td><textarea name="info" placeholder="Have a nice day!" id="info"></textarea></td>
+                    <td>
+                        <label for="info">About me</label>:
+                    </td>
+                    <td>
+                        <textarea name="info" placeholder="Have a nice day!" id="info"></textarea>
+                    </td>
                 </tr>
+
                 <tr>
                     <td><label for="phone">Mobile photo</label>:</td>
                     <td>
@@ -61,24 +89,36 @@
                         <input type="button" name="send" value="Send me code">
                     </td>
                 </tr>
+
                 <tr>
-                    <td><label for="code">Code</label>:</td>
-                    <td><input type="text" name="code" maxlength="4" id="code"> * Enter the 4-digit verification code
+                    <td>
+                        <label for="code">Code</label>:
+                    </td>
+                    <td>
+                        <input type="text" name="code" maxlength="4" id="code" autocomplete="off">
+                        * Enter the 4-digitverification code
                     </td>
                 </tr>
+
                 <tr>
-                    <td><label for="photo">Send your photo</label></td>
-                    <td><input type="file" name="photo" id="photo"></td>
+                    <td>
+                        <label for="photo">Send your photo</label>
+                    </td>
+                    <td>
+                        <input type="file" name="photo" id="photo">
+                    </td>
                 </tr>
+
                 <tr>
                     <td></td>
                     <td>
-                        <input type="checkbox" name="agree" value="yes" checked id="yes"><label for="yes">I accept
-                            agreement!</label>
+                        <input type="checkbox" name="agree" value="yes" checked id="yes">
+                        <label for="yes">I accept agreement!</label>
                         <p>About <a href="#" target="_blank">Agreement</a> and <a href="#" target="_blank">Privacy</a>
                         </p>
                     </td>
                 </tr>
+
                 <tr>
                     <td></td>
                     <td>
@@ -86,6 +126,7 @@
                         <input type="Reset" value="Reset">
                     </td>
                 </tr>
+
                 <tr>
                     <td></td>
                     <td>

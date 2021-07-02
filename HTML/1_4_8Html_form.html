@@ -2,16 +2,30 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="uft-8">
+    <meta charset="UTF-8">
     <title>表单标签用法</title>
+    <style>
+        /* 让文本框的轮廓线消失 */
+        input,
+        textarea {
+            outline: none;
+        }
+
+        /* 防止拖拽文本域 */
+        textarea {
+            resize: none;
+        }
+    </style>
 </head>
 
 <body>
-    <form action="#" method="POST" name="name1">
-        <!-- action为接受表单的服务器 method提交方式POST/GET name为命名表单 -->
+    <form action="#" method="POST" name="form">
+        <!-- action为接受表单的服务器 method提交方式POST/GET name为命名表单 验证要在表单域内-->
         <label for="name">Name</label>:
-        <input type="text" name="name" value="Your name" id="name">
+        <input type="text" name="name" placeholder="Your name" id="name" required="required" autofocus="autofocus"
+            autocomplete="off">
         <br />
+
         Date of birth:
         <select>
             <option sleceted>Year</option>
@@ -26,20 +40,24 @@
             <option>3</option>
         </select>
         <br />
+
         <!-- type输入类型date -->
         Date of birth:
-        <input type="date" name="bday" min="1920-1-1">
+        <input type="date" name="bday" min="1920-1-1" required="required">
         <br />
+
         Gender:
         <input type="radio" name="gender" value="male" id="male" checked>
         <label for="male">Male</label>
         <input type="radio" name="gender" value="female" id="female">
         <label for="female">Female</label>
         <br />
+
         <label for="psd">Password</label>:
         <input type="password" name="psd" maxlength="8" id="psd">
         * Password must contain at least 8 characters
         <br />
+
         Characteristic:
         <input type="checkbox" name="char" value="brave" id="brave">
         <label for="brave">Brave</label>
@@ -48,14 +66,19 @@
         <input type="checkbox" name="char" value="lovely" id="lovely">
         <label for="lovely">Lovely</label>
         <br />
+
         About me:
         <textarea placeholder="Have a nice day!"></textarea>
         <br />
         <input type="button" name="code" value="Send me code">
         <br />
-        <input type="file" name="upload" value="Send file">
+        <input type="file" name="upload" id="upload" multiple="multiple" style="display: none;"
+            onchange="document.form.path.value=this.value">
+        <input type="button" value="Send file" onclick="document.form.upload.click()">
         <!-- 疑惑：无法改变file属性value值，更改按钮上的文字 -->
+        <!-- 已解决：添加一个可以更改value值的按钮属性表单标签，并隐藏原本的文件属性表单标签 -->
         <br />
+
         <input type="submit" name="submit" value="Submit">
         <input type="reset" name="reset" value="Reset">
     </form>
