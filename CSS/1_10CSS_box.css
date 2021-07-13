@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 10px;
+}
+
+div {
+    display: inline-block;
+    height: 200px;
+    background: lemonchiffon;
+    text-align: center;
+    line-height: 200px;
+}
+
+/* 圆角边框 */
+
+.yjone {
+    width: 200px;
+    border-radius: 50px;
+}
+
+.yjtwo {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.yjthree {
+    width: 300px;
+    border-radius: 50%;
+}
+
+.yjfour {
+    width: 350px;
+    border-radius: 100px;
+}
+
+.yjfive {
+    width: 300px;
+    border-radius: 50px 70px 90px 110px;
+    /* 此属性单独设值 按左上、右上、右下、左下的顺序 */
+    /* 也可用单独属性 单独设值 border-top-left-radius border-top-right-radius border-bottom-right-radius border-bottom-left-radius
+*/
+}
+
+/* 盒子阴影 */
+
+.yyone {
+    width: 200px;
+    box-shadow: 10px 10px 20px -4px grey;
+    /* 复合属性 box-shadow: h-shadow v-shadow blur spread color inset */
+    /* 其中box-shadow中必须包含h-shadow、v-shadow */
+}
+
+.yytwo {
+    width: 200px;
+}
+
+.yytwo:hover {
+    box-shadow: 10px 10px 10px -1px rgba(0, 0, 0, .3);
+}
+
+/* 盒子阴影 */
+
+h4 {
+    font-size: 20px;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, .3);
+    /* 复合属性text-shadow:h-shadow v-shadow blur color */
+}

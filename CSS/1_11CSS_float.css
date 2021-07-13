@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 浮动的应用[父元素里裹挟着浮动的子元素] */
+
+.box1 {
+    width: 940px;
+    height: 160px;
+    margin: 0 auto;
+    padding: 10px;
+    background: gainsboro;
+}
+
+.box1>.left {
+    float: left;
+    width: 220px;
+    height: 160px;
+    background: skyblue;
+    margin-right: 20px;
+}
+
+.box1>.right {
+    margin-right: 0;
+}
+
+.box1 div:hover {
+    box-shadow: 10px 10px 5px -4px grey;
+}
+
+/* 浮动的应用2 */
+
+.box2 {
+    width: 800px;
+    height: 500px;
+    margin: 10px auto;
+    background: skyblue;
+}
+
+.box2>.right, .box2>.left {
+    float: left;
+    width: 200px;
+    height: 500px;
+    background: rgba(18, 161, 94, 0.3);
+}
+
+.box2>.right {
+    width: 590px;
+    height: 490px;
+    background: rgba(230, 77, 230, 0.2);
+}
+
+.box2>.right1 {
+    padding: 10px 0 0px 10px;
+}
+
+.box2>.right li {
+    float: left;
+    width: 137.5px;
+    height: 235px;
+    background: tan;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.box2>.right li:hover {
+    box-shadow: 5px 5px 5px 0px gray;
+    background: rgba(228, 85, 85, 0.9);
+    border-right: 0px
+}

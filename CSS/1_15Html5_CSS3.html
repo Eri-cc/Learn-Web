@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5、CSS3的特性</title>
+    <style>
+        li {
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        ul {
+            float: left;
+            margin-right: 50px;
+        }
+
+        .clearfix:after {
+            display: table;
+            height: 0;
+            content: "";
+            clear: both;
+            visibility: hidden;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            filter: blur(2px);
+            transition: all .5s;
+        }
+
+        img:hover {
+            filter: blur(1px);
+        }
+
+        /* 属性选择器 */
+        div[class^=box] {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            background: skyblue;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+        }
+
+        /* (结构)伪类选择器 用于有一组兄弟标签，从中筛选出所要的n标签 */
+        /* :first-child :first-of-type 父元素中第一个子元素 */
+        /* :last-child  :last-of-type父元素中最后一个子元素 */
+        /* :nth-child(n)  :nth-of-type(n) 可以为公式、数字、关键词 「n从0开始」 */
+        .list1 li:nth-child(2n) {
+            background: lemonchiffon;
+        }
+
+        .list1 li:nth-child(2n-1) {
+            background: lightblue;
+        }
+
+        /* 匹配原则：按父元素的顺序找到子元素，判断子元素是否为匹配元素，适合父元素内仅包含有单一子元素。 */
+        .list2 li:nth-child(n) {
+            background: lemonchiffon;
+        }
+
+        /* 匹配原则：先将父元素中匹配元素的子元素找出，按顺序找到子元素。 */
+        .list3 li:nth-of-type(n) {
+            background: lightblue;
+        }
+
+        .list3 div:nth-of-type(n) {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background: lemonchiffon;
+        }
+
+        /* 伪元素选择器 必须包含content属性 */
+        .last,
+        .masked {
+            float: left;
+            width: 300px;
+            height: 200px;
+            margin-right: 30px;
+            background: skyblue;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+        }
+
+        .masked {
+            position: relative;
+        }
+
+        .last::before {
+            float: left;
+            content: '前面';
+        }
+
+        .last::after {
+            float: right;
+            content: '后面';
+        }
+
+        .masked::after {
+            visibility: hidden;
+            opacity: 0;
+            /* display和transition之间不适用，用以上方法解决 */
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            content: '';
+            background: rgb(255, 165, 0, .6);
+            transition: all .4s;
+        }
+
+        .masked:hover::after {
+            visibility: visible;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>HTML5视频、音频标签</h3>
+    <video src="media/video.mp4" poster="images/doge.jpeg" width=20% autoplay="autoplay" muted="muted"
+        loop="loop"></video>
+    <audio src="media/omea.mp3" autoplay="autoplay" loop="loop" controls="controls"></audio>
+
+    <h3>CSS3新特性</h3>
+    <h4>图像模糊处理</h4>
+    <img src="images/doge.jpeg" alt="">
+
+    <div class="clearfix">
+        <h4>属性选择器 栗子:</h4>
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+    </div>
+
+    <div class="clearfix">
+        <h4>(结构)伪类选择器[:nth-child(n) :nth-of-type(n)] 栗子:</h4>
+        <ul class="list1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <ul class="list2">
+            <div>1</div>
+            <li>2</li>
+            <div>3</div>
+            <li>4</li>
+            <div>5</div>
+            <li>6</li>
+        </ul>
+        <ul class="list3">
+            <div>1</div>
+            <li>2</li>
+            <div>3</div>
+            <li>4</li>
+            <div>5</div>
+            <li>6</li>
+        </ul>
+    </div>
+
+    <h4>伪元素选择器 栗子:</h4>
+    <div class="clearfix">
+        <div class="last">中间</div>
+        <div class="masked">存在问题</div>
+    </div>
+</body>
+
+</html>

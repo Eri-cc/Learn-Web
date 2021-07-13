@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS背景</title>
+    <style>
+        body {
+            background: rgba(85, 100, 110, .2)
+        }
+
+        div {
+            width: 560px;
+            height: 360px;
+        }
+
+        .one {
+            background-color: rgba(216, 219, 222, .1);
+        }
+
+        .two {
+            background-image: url(images/monv.jpg);
+            background-attachment: fixed;
+        }
+
+        .three {
+            background-image: url(images/monv.jpg);
+            background-position: left bottom;
+        }
+
+        /* 复合属性 background */
+        /* background包含background-color、background-image、background-repeat、background-attachment（属性值为scroll、fixed）、 background-position */
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+</body>
+
+</html>
+
+<!-- 这是利用了background的一个栗子：https://wow.techbrood.com/fiddle/33739 -->

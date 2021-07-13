@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS转换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            display: table;
+            content: '';
+        }
+
+        .clearfix::after {
+            clear: both;
+        }
+
+        h2 {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        section {
+            margin: 10px 20px;
+        }
+
+        div {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+            background: gray;
+        }
+
+        div p {
+            display: block;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s;
+        }
+
+        .translate,
+        .rotate,
+        .rightToprotate,
+        .widthScale,
+        .heightScale,
+        .rightTopscale,
+        .scale,
+        .all {
+            padding: 20px 10px;
+            background: rgba(9, 176, 242, 0.5);
+            transition: all .3s;
+        }
+
+        .rightToprotate,
+        .rightTopscale {
+            transform-origin: right top;
+        }
+
+        .box:hover div p {
+            visibility: visible;
+            opacity: 1;
+            transform-origin: 50% 50%;
+        }
+
+        .box:hover .translate {
+            transform: translate(30px, 50px);
+            /* transform: translate(50%, 50%); 根据盒子自身的宽度和高度 */
+            /* 若仅向单个方向移动，有以下的写法。【注意：最后一个transform在页面生效】 */
+            /* transform: translateX(30px); */
+            /* transform: translateY(50px); */
+        }
+
+        .box:hover .rotate {
+            transform: rotate(180deg);
+        }
+
+        .box:hover .protate {
+            /* transform用于块元素，行内元素要转换 */
+            line-height: 160px;
+            transform: rotate(180deg);
+        }
+
+        .box:hover .rightToprotate {
+            transform: rotate(-180deg);
+        }
+
+        .box:hover .widthScale {
+            transform: scale(0.8, 1)
+        }
+
+        .box:hover .heightScale {
+            transform: scale(1, 1.2);
+        }
+
+        .box:hover .rightTopscale {
+            transform: scale(0.9);
+        }
+
+        .box:hover .scale {
+            transform: scale(1.5);
+        }
+
+        .box:hover .all {
+            transform: translateX(300px) rotate(3600deg) scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>transform应用【不影响整体布局】</h2>
+    <h3>栗子一：位置平移</h3>
+    <section class="clearfix">
+        <div class="box">
+            <div class="translate">
+                <p>平移后,原本位置依旧保留，不脱离标准流。</p>
+            </div>
+        </div>
+    </section>
+    <h3>栗子二：旋转（更换圆心、正逆旋转）</h3>
+    <section class="clearfix">
+        <div class="box">
+            <div class="rotate">
+                <p class="protate">以自身中心为圆心旋转</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="rightToprotate">
+                <p class="protate">以右上角为圆心逆旋转</p>
+            </div>
+        </div>
+    </section>
+    <h3>栗子三：缩放（更改缩放中心点、缩小、放大）</h3>
+    <section class="clearfix">
+        <div class="box">
+            <div class="widthScale">
+                <p>以自身宽度缩小</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="heightScale">
+                <p>以自身长度放大</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="rightTopscale">
+                <p>以右上角缩小</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="scale">
+                <p>整体放大1.5倍</p>
+            </div>
+        </div>
+    </section>
+    <h3>栗子四：综合应用</h3>
+    <section class="clearfix">
+        <div class="box">
+            <div class="all">
+                <p>注意顺序</p>
+            </div>
+        </div>
+    </section>
+    <a href="https://c.runoob.com/codedemo/3391">参考：菜鸟驿站</a>
+</body>
+
+</html>

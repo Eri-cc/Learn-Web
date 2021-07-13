@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS清除浮动</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        div {
+            width: 500px;
+            margin: 0 auto;
+
+
+        }
+
+        .float {
+            background: indianred;
+            border: 1px dotted black;
+        }
+
+        .float div {
+            float: left;
+            width: 200px;
+            height: 100px;
+            background: lightblue;
+            border: 1px solid gainsboro;
+
+        }
+
+        .unfloat {
+            height: 130px;
+            background: lemonchiffon;
+        }
+
+        /* 额外标签法 */
+        br {
+            clear: both;
+        }
+
+        /* 父元素添加overflow */
+        .one {
+            overflow: hidden;
+        }
+
+        /* :after伪元素法 */
+        .clearfix1:after {
+            display: block;
+            height: 0;
+            clear: both;
+            content: "";
+            visibility: hidden;
+        }
+
+        /*
+        IE6 IE7专用
+        .clearfix {
+            *zoom: 1;
+        }
+        */
+
+        /* 双伪元素法 */
+        .clearfix2:before,
+        .clearfix2:after {
+            display: table;
+            content: "";
+        }
+
+        .clearfix2:after {
+            clear: both;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>未清除浮动的栗子</h3>
+    <div class="float">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="unfloat"></div>
+    <p>现象：包含浮动子元素的上盒子由于未指定高度,紧贴着的下盒子会自动靠上去，这会造成下盒子被遮挡。</p>
+    <p>本质：浮动元素脱离了标准流产生的影响</p>
+    <h3>清除浮动解决方法1-额外标签法</h3>
+    <div class="float">
+        <div></div>
+        <div></div>
+        <br />
+        <!-- <div style="clear:both"></div> -->
+        <!-- 复合w3c标准 额外的标签必须是块元素 -->
+    </div>
+    <div class="unfloat"></div>
+    <h3>清除浮动解决方法2-父元素添加overflow</h3>
+    <div class="float one">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="unfloat"></div>
+    <h3>清除浮动解决方法3-:after伪元素法</h3>
+    <div class="float clearfix1">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="unfloat"></div>
+    <h3>清除浮动解决方法4-:双伪元素清除浮动</h3>
+    <div class="float clearfix2">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="unfloat"></div>
+</body>
+
+</html>

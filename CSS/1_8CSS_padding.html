@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS盒子模型——内边距</title>
+    <style>
+        body {
+            font-size: 20px;
+        }
+
+        .one {
+            width: 400px;
+            height: 200px;
+            background: rgba(0, 0, 0, .3);
+            border: 2px solid;
+            padding-top: 90px;
+            padding-bottom: 90px;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+
+        /* 复合属性padding使用（适用于margin、border相关属性） */
+        /* padding: 10px ；[上下左右内边距10px] */
+        /* padding: 5px 10px ；[上下内边距5px，左右内边距10px] */
+        /* padding: 5px 10px 5px；[上、下内边距5px，左右内边距10px] */
+        /* padding: 5px 10px 10px 5px；[上内边距5px，右内边距10px，下内边距5px，左内边距10px（顺时针方向）] */
+
+        .nav {
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            height: 41px;
+            line-height: 41px;
+            background-color: #fcfcfc;
+        }
+
+        .nav a {
+            display: inline-block;
+            height: 41px;
+            padding: 0 20px;
+            text-decoration: none;
+            color: #4c4c4c;
+        }
+
+        .nav a:hover {
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">
+        内边距撑大了盒子
+    </div>
+    <p> 导航栏案例</p>
+    <div class="nav">
+        <a href="#">模仿</a>
+        <a href="#">导航栏</a>
+        <a href="#">-</a>
+        <a href="#">测试</a>
+        <a href="#">内边距</a>
+        <a href="#">Padding</a>
+    </div>
+</body>
+
+</html>

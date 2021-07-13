@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS盒子模型——外边距</title>
+    <style>
+        /* 清除网页浏览器自带的内外边距 */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            height: 200px;
+            background: skyblue;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        /* 复合属性margin使用与padding相同 */
+        .one {
+            line-height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .two {
+            width: 260px;
+            background: pink;
+            margin: 0 auto 20px;
+            padding: 50px 20px 0;
+        }
+
+        .lizi1 {
+            display: inline-block;
+            width: 400px;
+            height: 600px;
+            background: lemonchiffon;
+            padding-top: 20px;
+            vertical-align: top;
+            /* 解决了inline-block元素不在同一水平线的问题 */
+            /* 进一步了解 https://www.w3school.com.cn/cssref/pr_pos_vertical-align.asp */
+        }
+
+        .lizi2 p {
+            text-align: left;
+            margin: 20px;
+        }
+
+        .three {
+            display: block;
+            width: 250px;
+            margin: 20px 75px 100px;
+            line-height: 250px;
+        }
+
+        .four {
+            display: block;
+            width: 250px;
+            margin: 99px 75px 20px;
+            line-height: 150px;
+        }
+
+        .father {
+            height: 300px;
+            margin-top: 10px;
+        }
+
+        .son {
+            width: 200px;
+            background: lightcoral;
+            margin-top: 50px;
+            text-align: left;
+            line-height: 25px;
+            /* 当仅有单行文本 line-height设置成和height数值相同 来实现垂直居中的效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <p>设置外边距分开两个盒子</p>
+    <div class="one">将下外边距设置了20px 分开两个紧靠的盒子</div>
+    <div></div>
+    <p>通过将外边距设置为auto 将盒子水平居中</p>
+    <div class="two">
+        <p>设置外边距auto的前提：</p>
+        <p>先将盒子设置好宽度</p>
+    </div>
+
+    <div class="lizi1">
+        外边距合并栗子[相邻块元素垂直]
+        <div class="three">上盒子设置了下边距100px</div>
+        <div class="four">下盒子设置了上边距99px</div>
+        结果：外边距合并，外边距最终取大值者
+    </div>
+
+    <div class="lizi1 lizi2">
+        外边距合并栗子[嵌套块元素垂直]
+        <div class="father">
+            <div class="son"> 蓝色是父元素的盒子，设置了上外边距10px。<br />红色子元素的盒子，设置了上外边距50px</div>
+        </div>
+        <p>结果：外边距合并，父元素的盒子坍塌，上外边距最终取子元素的大值50px</p>
+        <p>解决方法:<br />
+            1.为父元素盒子添加边框/内边距/内容<br />
+            2.在父元素盒子&lt;style&gt;添加overflow:hidden</p>
+    </div>
+</body>
+
+</html>
+<!-- 行内元素若设置内外边距 一般只用设置左右内外边距 -->

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 18px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+
+
+        .box1 {
+            position: relative;
+            top: 200px;
+            left: 250px;
+            width: 280px;
+            height: 220px;
+            padding: 0 10px;
+            border: 1px solid transparent;
+            background: lemonchiffon;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background: rosybrown;
+        }
+
+        .box3 {
+            float: left;
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background: rosybrown;
+        }
+
+        .right {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .box4 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 280px;
+            height: 220px;
+            padding: 0 10px;
+            background: lemonchiffon;
+        }
+
+        .hidden {
+            z-index: -1;
+        }
+
+        .box5 {
+            position: fixed;
+            top: 100px;
+            right: 50px;
+            width: 300px;
+            height: 300px;
+            background: rosybrown;
+        }
+
+        .box6 {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            width: 500px;
+            height: 250px;
+            margin: 0 auto;
+            border: 1px solid transparent;
+            background: rosybrown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Postion定位属性的各类栗子和特点</h1>
+    <div class="box6">
+        <h2>粘性定位sticky</h2>
+        特点：<br />
+        1.拥有相对定位和固定定位的两类特性<br />
+        2.原有的位置以标准流依旧保留<br />
+        3.必须包含top/left/right/bottom属性其中一个，方才实现粘性定位<br />
+        4.&lt;h2&gt;的上边距导致父盒子的上边距塌陷（拥有相对定位属性的盒子均出现),添加边框解决【更多解决方法看1_9】
+    </div>
+
+    上边、下边的位置均被占用
+    <div class="box1">
+        <h2>相对定位relative</h2>
+        特点：<br />
+        1.相对于原来的位置进行边偏移<br />
+        2.原有的位置以标准流依旧保留
+    </div>
+    <div class="left"></div>
+    <div class="box2"></div>
+    <br />
+
+    <div class="box3">
+        位置未被占用
+        <div class="box4">
+            <h2>绝对定位absolute</h2>
+            特点：<br />
+            1.以最近一级有定位（如相对、绝对、固定定位）的祖先元素进行边偏移，否则以浏览器为准定位<br />
+            2.不再占有原本的位置
+        </div>
+    </div>
+
+    <div class="box3 right">
+        z-index栗子<br />
+        特点：使用前提必须有定位属性
+        <div class="box4 hidden">
+            <h2>绝对定位absolute</h2>
+        </div>
+    </div>
+
+    <div class="box5">
+        <h2>固定定位fixed</h2>
+        特点：<br />
+        1.以浏览器的可视窗口进行移动<br />
+        2.不再占有原本的位置
+    </div>
+</body>
+
+</html>

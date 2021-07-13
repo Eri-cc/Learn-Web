@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 18px;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+    /* 抹去每个<li>前面的圆点 */
+}
+
+/* 继承选择器(包含此类后所有的标签) */
+
+.one dd {
+    text-align: center;
+    font: 500 20px/25px "Microsoft yahei";
+}
+
+/* 子选择器 (仅包含此类后的子标签) */
+
+.two ul>li {
+    color: red;
+    font: 400 15px/15px "Microsoft yahei";
+}
+
+/* 并集选择器 */
+
+div, p, h4 {
+    text-align: center;
+    font: 500 20px/25px "Microsoft yahei";
+}
+
+/* 伪类选择器 */
+
+a:link {
+    color: #000;
+}
+
+a:visited {
+    color: rgb(241, 144, 144);
+}
+
+a:hover {
+    color: lightblue;
+}
+
+a:active {
+    color: lightgreen;
+}
+
+input:focus {
+    background-color: rgb(235, 235, 240);
+    color: rgb(59, 177, 156);
+    /* 此处color更改的是聚焦的光标颜色和输入文字的颜色 */
+}

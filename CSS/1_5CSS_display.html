@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS元素显示模式</title>
+    <style>
+        body {
+            background-color: lightblue;
+            color: lightgoldenrodyellow;
+            font: 500 20px/28px "Microsoft Yahei";
+        }
+
+        div,
+        span,
+        a,
+        input,
+        strong {
+            background-color: honeydew;
+            color: grey;
+            text-decoration: none;
+        }
+
+        .one {
+            width: 400px;
+            background-color: lemonchiffon;
+            color: pink;
+        }
+
+        .change1 {
+            display: block;
+        }
+
+        .change2 {
+            display: inline;
+        }
+
+        .change3 {
+            display: inline-block;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>块元素</h3>
+    <div>这是正常的块元素&lt;div&gt;</div>
+    <div class="one">这是设置了宽度的块元素&lt;div&gt;</div>
+    <p style="color:rgb(255, 224, 198)">*块元素文字类标签[&lt;p&gt;、&lt;h&gt;] 不能再使用块元素</p>
+
+    <h3>行内元素</h3>
+    <span>这是正常的行内元素&lt;span&gt</span>
+    <span class="one">这是行内元素&lt;span&gt;[宽度由内容决定]</span>
+    <p style="color:rgb(255, 224, 198)">*行内元素&lt;a&gt;可以放块元素</p>
+
+    <h3>行内块元素</h3>
+    <input type="text" value="这是正常的行内块元素&lt;input&gt;">
+    <input type="text" class="one" value="这是设置了宽度的行内块元素&lt;input&gt;">
+    <p style="color:rgb(255, 224, 198)">*其余的行内块元素有&lt;src&gt;&lt;td&gt;</p>
+
+    <h3>元素显示模式的转换</h3>
+    <p style="font: 18px/10px 'Microsoft yahei'">行内元素转换为块元素：</p>
+    <a href="#">这是正常的行内元素&lt;a&gt;</a>
+    <a href="#" class="one change1">这是转换后块元素的&lt;a&gt;</a>
+    <p style="font: 18px/10px 'Microsoft yahei'">块元素转换为行内元素：</p>
+    <div>这是正常的块元素&lt;div&gt;</div>
+    <div class="one change2">这是转换后行内元素&lt;div&gt;</div>
+    <p style="font: 18px/10px 'Microsoft yahei'">行内元素转换为行内块元素</p>
+    <strong>这是行内元素&lt;strong&gt;</strong>
+    <strong class="one change3">这是转换后的行内块元素&lt;strong&gt;</strong>
+</body>
+
+</html>
